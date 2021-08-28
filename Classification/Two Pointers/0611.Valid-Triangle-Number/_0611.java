@@ -19,7 +19,6 @@ class Solution0611 {
     		for(int j = i + 1; j < nums.length; j ++) {
     			for(int k = j + 1; k < nums.length; k ++) {
     				if(nums[i] + nums[j] > nums[k]) {
-    					System.out.println(nums[i] + " " + nums[j] + " " + nums[k]);
     					ans ++;
     				}
     				else break;
