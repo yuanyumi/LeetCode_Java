@@ -24,29 +24,3 @@ Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
 ## 解题思路
 
 - 简单题。循环一次，扫描数组过程中累加窗口大小为 k 的元素值。不断更新这个最大值。循环结束求出平均值即可。
-
-## 代码
-
-```go
-package leetcode
-
-func findMaxAverage(nums []int, k int) float64 {
-	sum := 0
-	for _, v := range nums[:k] {
-		sum += v
-	}
-	maxSum := sum
-	for i := k; i < len(nums); i++ {
-		sum = sum - nums[i-k] + nums[i]
-		maxSum = max(maxSum, sum)
-	}
-	return float64(maxSum) / float64(k)
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-```
