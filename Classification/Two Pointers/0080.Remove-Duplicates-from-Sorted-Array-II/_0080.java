@@ -24,10 +24,15 @@ class Solution0080 {
     		}
     		i ++;
     	}
+    	return nums.length - trash;
     }
 
 	private void toEnd(int[] nums, int i) {
-		// TODO Auto-generated method stub
-		
+		while(i < nums.length - 1) {
+			int t = nums[i];
+			nums[i] = nums[i + 1];
+			nums[i + 1] = t;
+			i ++;
+		}
 	} 
 }
